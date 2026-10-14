@@ -1,0 +1,42 @@
+name: Tabelle aktualisieren
+
+on:
+  schedule:
+    # Sonntagabend (Haupt-Lauf): 20:00 UTC = 22:00 Uhr Sommerzeit / 21:00 Uhr Winterzeit
+    - cron: "0 20 * * 0"
+    # Montagfrüh (Rückfall, falls die Verbandsseite sonntags noch nicht aktuell war)
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}  # erlaubt manuelles Auslösen über den "Actions"-Tab auf GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  update-tabelle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r scripts/requirements.txt
+
+      - name: Tabelle von nrwfootball.de holen und data.json aktualisieren
+        run: python scripts/update_tabelle.py
+
+      - name: Änderungen committen (nur wenn sich etwas geändert hat)
+        run: |
+          git config user.name "Chargers-Tabellen-Bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- data.json; then
+            echo "Keine Änderung an der Tabelle — nichts zu committen."
+          else
+            git add data.json
+            git commit -m "Tabelle automatisch aktualisiert ($(date -u +%Y-%m-%d))"
+            git push
+          fi

@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recklinghausen Chargers – American Football</title>
+<meta name="description" content="Recklinghausen Chargers – American Football & Flag Football im Herzen des Ruhrgebiets. Verbandsliga NRW, Spielplan, Ergebnisse, Training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#1a3a8c;--blue-dark:#0d2260;--blue-light:#2a4eb8;
+  --red:#8b0000;--red-hover:#a50000;--red-mid:#6e0000;
+  --bg:#fff;--bg2:#f4f6fa;--bg3:#e8ebf2;
+  --text:#1a1a2e;--muted:#5a6075;--border:#e8ebf2;--card:#fff;
+}
+.dark{
+  --bg:#0d1220;--bg2:#131b2e;--bg3:#1a2540;
+  --text:#e8eaf0;--muted:#8892aa;--border:#1e2d4a;--card:#131b2e;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--bg);transition:background 0.3s,color 0.3s;}
+a{transition:opacity 0.15s;}
+
+/* ── NAVIGATION ── */
+nav{
+  background:var(--blue-dark);
+  display:flex;align-items:center;
+  padding:0 20px;height:60px;gap:10px;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,0.3);
+}
+.nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
+.nav-logo img{height:42px;object-fit:contain;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.5));}
+.nav-logo span{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1px;line-height:1.25;}
+.nav-links{display:flex;gap:2px;flex:1;justify-content:center;flex-wrap:wrap;}
+.nav-links a{
+  color:rgba(255,255,255,0.78);text-decoration:none;
+  font-size:12px;font-weight:500;padding:5px 9px;
+  border-radius:5px;white-space:nowrap;
+  transition:background 0.15s,color 0.15s;
+}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.13);color:#fff;}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.dark-toggle{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:#fff;font-size:15px;width:34px;height:34px;
+  border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.dark-toggle:hover{background:rgba(255,255,255,0.18);}
+.nav-cta{
+  background:var(--red);color:#fff;
+  font-size:12px;font-weight:600;padding:7px 14px;
+  border-radius:6px;text-decoration:none;white-space:nowrap;
+  transition:background 0.15s;
+}
+.nav-cta:hover{background:var(--red-hover);}
+
+/* ── HERO / SLIDER ── */
+.hero{position:relative;overflow:hidden;min-height:330px;}
+.slider{position:absolute;inset:0;z-index:0;}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;}
+.slide.active{opacity:1;}
+.slide-1{background:url('slide1.png') center/cover no-repeat;}
+.slide-2{background:url('slide2.jpg') center/cover no-repeat;}
+.slide-3{background:url('slide3.jpg') center/cover no-repeat;}
+.slide-4{background:url('slide4.jpg') center/cover no-repeat;}
+.upload-hint{
+  position:absolute;top:50%;right:32px;transform:translateY(-50%);
+  background:rgba(255,255,255,0.07);border:1px dashed rgba(255,255,255,0.2);
+  border-radius:8px;padding:12px 16px;text-align:center;
+  color:rgba(255,255,255,0.42);font-size:10px;line-height:1.7;
+  z-index:2;pointer-events:none;
+}
+.upload-hint strong{display:block;font-size:12px;color:rgba(255,255,255,0.62);margin-bottom:3px;}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.25) 60%,rgba(0,0,0,0.10) 100%);
+  z-index:1;
+}
+.slider-dots{
+  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  display:flex;gap:7px;z-index:3;
+}
+.slider-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(255,255,255,0.3);cursor:pointer;
+  border:none;padding:0;transition:background 0.3s;
+}
+.slider-dot.active{background:#fff;}
+.hero-content{position:relative;z-index:2;padding:36px 36px 42px;}
+.hero-inner{display:flex;align-items:center;gap:28px;}
+.hero-logo img{height:120px;object-fit:contain;filter:drop-shadow(0 4px 18px rgba(0,0,0,0.65));}
+.hero-tag{
+  display:inline-block;background:var(--red);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:3px 10px;border-radius:4px;margin-bottom:10px;
+}
+.hero h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:46px;font-weight:900;color:#fff;
+  line-height:1;margin-bottom:8px;letter-spacing:1px;
+}
+.hero h1 span{color:#e53535;}
+.hero p{color:rgba(255,255,255,0.70);font-size:13px;max-width:400px;margin-bottom:20px;line-height:1.6;}
+.hero-btns{display:flex;gap:9px;flex-wrap:wrap;}
+.btn-p{background:var(--red);color:#fff;font-weight:600;font-size:13px;padding:10px 20px;border-radius:6px;text-decoration:none;}
+.btn-p:hover{background:var(--red-hover);}
+.btn-s{
+  background:rgba(255,255,255,0.10);color:#fff;
+  font-weight:600;font-size:13px;padding:10px 20px;
+  border-radius:6px;text-decoration:none;
+  border:1px solid rgba(255,255,255,0.22);
+}
+.btn-s:hover{background:rgba(255,255,255,0.18);}
+.hero-stats{
+  display:flex;gap:26px;
+  margin-top:26px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,0.12);
+}
+.hero-stat .num{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#fff;line-height:1;}
+.hero-stat .lbl{font-size:10px;color:rgba(255,255,255,0.52);margin-top:2px;}
+
+/* ── COUNTDOWN ── */
+.countdown-bar{
+  background:var(--blue-dark);
+  padding:10px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.cd-label{color:rgba(255,255,255,0.58);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.cd-game{color:#fff;font-size:12px;font-weight:600;flex:1;min-width:0;}
+.cd-units{display:flex;gap:12px;flex-shrink:0;}
+.cd-unit{text-align:center;}
+.cd-num{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:#fff;line-height:1;min-width:30px;display:block;}
+.cd-lbl{font-size:9px;color:rgba(255,255,255,0.48);letter-spacing:0.5px;}
+
+/* ── ALERT BAR ── */
+.alert-bar{
+  background:var(--red-mid);
+  padding:9px 22px;display:flex;align-items:center;gap:10px;
+}
+.alert-bar .badge{
+  background:rgba(0,0,0,0.25);color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:1px;
+  padding:2px 7px;border-radius:4px;white-space:nowrap;
+}
+.alert-bar p{color:#fff;font-size:12px;font-weight:500;flex:1;}
+.alert-bar a{color:rgba(255,255,255,0.82);text-decoration:underline;font-size:11px;white-space:nowrap;}
+
+/* ── LIVETICKER ── */
+.ticker-bar{background:var(--bg2);border-bottom:2px solid var(--red);}
+.ticker-header{display:flex;align-items:flex-end;gap:0;}
+.ticker-tab{
+  padding:10px 18px;font-size:12px;font-weight:600;cursor:pointer;
+  border:none;background:transparent;color:var(--muted);
+  border-bottom:2px solid transparent;margin-bottom:-2px;
+  font-family:'Barlow',sans-serif;
+}
+.ticker-tab.active{color:var(--red);border-bottom-color:var(--red);background:var(--bg);}
+.ticker-live-dot{
+  display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:#e53535;margin-right:5px;vertical-align:middle;
+  animation:pulse 1.2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.25;}}
+.ticker-content{background:var(--bg);padding:16px 22px;display:none;}
+.ticker-content.show{display:block;}
+.ticker-empty{color:var(--muted);font-size:13px;padding:10px 0;text-align:center;}
+.ticker-event{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:9px 0;border-bottom:1px solid var(--border);
+}
+.ticker-event:last-child{border-bottom:none;}
+.ticker-time{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--blue);min-width:38px;padding-top:1px;}
+.dark .ticker-time{color:#7aa0f0;}
+.ticker-score-big{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;
+  background:var(--blue-dark);color:#fff;
+  padding:4px 12px;border-radius:6px;min-width:80px;text-align:center;flex-shrink:0;
+}
+.ticker-score-big .away{color:rgba(255,255,255,0.55);}
+.ticker-type{
+  display:inline-block;font-size:9px;font-weight:700;
+  padding:1px 6px;border-radius:3px;margin-bottom:3px;letter-spacing:0.5px;
+}
+.type-td{background:#e6f4ea;color:#2e7d32;}
+.type-fg{background:#e8f0fc;color:#1a3a8c;}
+.type-safety{background:#fff3e0;color:#e65100;}
+.type-info{background:var(--bg3);color:var(--muted);}
+.ticker-desc{font-size:12px;color:var(--text);line-height:1.5;}
+.ticker-admin-form{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  padding:14px 22px;background:var(--bg2);border-top:1px solid var(--border);
+}
+.ticker-admin-form input,
+.ticker-admin-form select{
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text);padding:7px 10px;border-radius:5px;
+  font-size:12px;font-family:'Barlow',sans-serif;
+}
+.ticker-admin-form button{
+  background:var(--red);color:#fff;border:none;
+  padding:7px 16px;border-radius:5px;font-size:12px;
+  font-weight:600;cursor:pointer;font-family:'Barlow',sans-serif;
+}
+.ticker-admin-form button:hover{background:var(--red-hover);}
+
+/* ── MAIN GRID ── */
+.main-grid{display:grid;grid-template-columns:1fr 290px;}
+@media(max-width:680px){.main-grid{grid-template-columns:1fr;}}
+.section{padding:22px 26px;background:var(--bg);}
+.section+.section{border-top:1px solid var(--border);}
+.sec-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
+  color:var(--blue-dark);letter-spacing:0.5px;margin-bottom:13px;
+  display:flex;align-items:center;gap:7px;
+}
+.dark .sec-title{color:#7aa0f0;}
+.sec-title .dot{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0;}
+
+/* ── MATCH CARDS ── */
+.match{
+  display:flex;align-items:center;border-radius:7px;
+  border:1px solid var(--border);margin-bottom:7px;
+  overflow:hidden;background:var(--card);
+}
+.match-date{
+  background:var(--blue-dark);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;
+  padding:10px 11px;min-width:50px;text-align:center;line-height:1.3;flex-shrink:0;
+}
+.match-date .day{font-size:19px;font-weight:900;line-height:1;}
+.match-body{flex:1;padding:7px 12px;}
+.match-teams{font-size:12px;font-weight:600;color:var(--text);}
+.match-comp{font-size:10px;color:var(--muted);margin-top:1px;}
+.match-result{padding:7px 11px;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.match-score{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;
+  background:var(--bg2);padding:3px 9px;border-radius:4px;
+}
+.score-w{color:var(--blue-dark);}
+.dark .score-w{color:#7aa0f0;}
+.score-l{color:var(--red);}
+.score-sep{color:var(--muted);}
+.badge-up{background:#e8f0fc;color:#1a3a8c;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;}
+.badge-win{background:#e6f4ea;color:#2e7d32;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;}
+.badge-loss{background:#f9e0e0;color:#8b0000;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;}
+
+/* ── STANDINGS ── */
+.standings-table{width:100%;border-collapse:collapse;font-size:11px;}
+.standings-table th{text-align:left;color:var(--muted);font-weight:600;padding:4px 4px;border-bottom:2px solid var(--border);}
+.standings-table td{padding:6px 4px;border-bottom:1px solid var(--border);}
+.standings-table tr:last-child td{border-bottom:none;}
+.tn{font-weight:600;font-size:11px;}
+.hl{background:rgba(26,58,140,0.06);}
+.dark .hl{background:rgba(122,160,240,0.08);}
+.rank{font-weight:700;color:var(--muted);text-align:center;width:16px;}
+.pct{font-weight:700;color:var(--blue-dark);}
+.dark .pct{color:#7aa0f0;}
+
+/* ── MAP ── */
+.map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+.map-wrap iframe{display:block;width:100%;height:210px;border:none;}
+
+/* ── SIDEBAR ── */
+.sidebar{background:var(--bg2);border-left:1px solid var(--border);}
+.sb{padding:18px 17px;border-bottom:1px solid var(--border);background:var(--bg);}
+.member-cta{background:var(--blue-dark);border-radius:8px;padding:16px;text-align:center;}
+.member-cta h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:5px;}
+.member-cta p{font-size:11px;color:rgba(255,255,255,0.65);margin-bottom:12px;line-height:1.5;}
+.member-cta a{
+  display:block;background:var(--red);color:#fff;
+  font-weight:600;font-size:12px;padding:8px;
+  border-radius:5px;text-decoration:none;margin-bottom:6px;
+}
+.member-cta a:hover{background:var(--red-hover);}
+.member-cta a.login-btn{
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.2);
+  margin-bottom:0;
+}
+.shop-cards{display:flex;flex-direction:column;gap:7px;}
+.shop-card{
+  display:flex;align-items:center;gap:10px;border:1px solid var(--border);
+  border-radius:7px;padding:10px 12px;text-decoration:none;
+  color:var(--text);background:var(--card);
+}
+.shop-card:hover{border-color:var(--red);}
+.shop-icon{width:36px;height:36px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.shop-name{font-size:12px;font-weight:600;color:var(--blue-dark);}
+.dark .shop-name{color:#7aa0f0;}
+.shop-desc{font-size:10px;color:var(--muted);}
+.shop-arrow{margin-left:auto;color:var(--muted);font-size:13px;}
+.ig-grid{display:flex;flex-direction:column;gap:7px;}
+.ig-card{
+  display:flex;align-items:center;gap:9px;border:1px solid var(--border);
+  border-radius:7px;padding:9px 11px;text-decoration:none;
+  color:var(--text);background:var(--card);
+}
+.ig-card:hover{border-color:var(--red);}
+.ig-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
+.ig-handle{font-size:11px;font-weight:600;color:var(--blue-dark);}
+.dark .ig-handle{color:#7aa0f0;}
+.ig-desc{font-size:10px;color:var(--muted);}
+.ig-arr{margin-left:auto;color:var(--muted);font-size:12px;}
+.tr-item{display:flex;gap:7px;margin-bottom:9px;align-items:flex-start;}
+.tr-item:last-child{margin-bottom:0;}
+.tr-badge{background:var(--blue);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0;margin-top:1px;}
+.tr-info{font-size:11px;color:var(--text);line-height:1.5;}
+.tr-info strong{font-weight:600;}
+
+/* ── SPONSOR GRID ── */
+.sponsor-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.sponsor-slot{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:6px;padding:10px 14px;
+  font-size:11px;font-weight:600;color:var(--muted);
+  text-align:center;min-width:90px;flex:1;line-height:1.5;
+}
+.sponsor-slot.filled{background:var(--card);color:var(--blue-dark);border-color:var(--blue);}
+.dark .sponsor-slot.filled{color:#7aa0f0;border-color:#2a4eb8;}
+
+/* ── HELPERS PAGE ── */
+.helpers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:6px;}
+.helper-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-align:center;}
+.helper-photo{width:100%;height:86px;display:flex;align-items:center;justify-content:center;font-size:38px;}
+.helper-name{font-size:12px;font-weight:600;color:var(--text);padding:7px 8px 2px;}
+.helper-role{font-size:10px;color:var(--muted);padding:0 8px 9px;}
+.thank-box{
+  background:linear-gradient(135deg,var(--blue-dark),var(--red));
+  border-radius:8px;padding:16px;text-align:center;margin-top:14px;
+}
+.thank-box p{color:#fff;font-size:13px;font-weight:600;line-height:1.6;}
+
+/* ── PLAYER PROFILES ── */
+.players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:10px;}
+.player-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-align:center;}
+.player-photo{width:100%;height:72px;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.player-num{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--blue-dark);line-height:1;padding-top:4px;}
+.dark .player-num{color:#7aa0f0;}
+.player-name{font-size:11px;font-weight:600;color:var(--text);padding:3px 6px 1px;}
+.player-pos{font-size:9px;color:var(--muted);padding:0 6px 8px;}
+.coach-row{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:10px 13px;margin-bottom:7px;}
+.coach-av{width:40px;height:40px;border-radius:50%;background:var(--blue-dark);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.coach-name{font-size:12px;font-weight:600;color:var(--text);}
+.coach-role{font-size:10px;color:var(--muted);}
+
+/* ── PAGES ── */
+.page{display:none;}
+.page.active{display:block;}
+.page-inner{padding:24px 28px;background:var(--bg);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--blue-dark);
+  padding:18px 24px;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+footer p{color:rgba(255,255,255,0.45);font-size:11px;}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:11px;margin-left:12px;}
+footer a:hover{color:#fff;}
+
+.link-btn{
+  display:inline-block;background:var(--blue-dark);color:#fff;
+  padding:7px 16px;border-radius:5px;text-decoration:none;
+  font-size:11px;font-weight:600;margin-top:12px;
+}
+.link-btn:hover{background:var(--blue);}
+.spl{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:8px;padding:10px 20px;min-width:130px;
+  font-size:13px;font-weight:600;color:var(--text);text-align:center;
+  flex-shrink:0;
+}
+.spl span{font-size:10px;font-weight:400;color:var(--muted);margin-top:2px;}
+.spl strong{color:var(--blue-dark);}
+.dark .spl strong{color:#7aa0f0;}
+.spl-cta{border-style:dashed;color:var(--muted);}
+.spl-cta strong{color:var(--muted);}
+@keyframes scroll-sponsors{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hero h1{font-size:34px;}
+  .hero-logo img{height:80px;}
+  .upload-hint{display:none;}
+}
+</style>
+</head>
+<body id="site">
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home',null)">
+    <img src="https://recklinghausen-chargers.com/wp-content/uploads/2020/09/chargers_frei-1.png" alt="Recklinghausen Chargers Logo">
+    <span>RECKLINGHAUSEN<br>CHARGERS</span>
+  </a>
+  <div class="nav-links">
+    <a href="#" class="active" onclick="showPage('home',this)">Home</a>
+    <a href="#" onclick="showPage('spielplan',this)">Spielplan</a>
+    <a href="#" onclick="showPage('teams',this)">Teams</a>
+    <a href="#" onclick="showPage('helfer',this)">Helfer</a>
+    <a href="#" onclick="showPage('fanshop',this)">Fan-Shop</a>
+    <a href="#" onclick="showPage('sponsors',this)">Sponsoren</a>
+  </div>
+  <div class="nav-right">
+    <button class="dark-toggle" onclick="toggleDark()" title="Dark Mode umschalten">🌙</button>
+    <a href="https://easyverein.com/public/Chargers/applicationform/" class="nav-cta" target="_blank" rel="noopener">Mitglied →</a>
+  </div>
+</nav>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="slider" id="slider">
+      <div class="slide slide-1 active"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="slider-dots" id="dots">
+      <button class="slider-dot active" onclick="goTo(0)"></button>
+      <button class="slider-dot" onclick="goTo(1)"></button>
+      <button class="slider-dot" onclick="goTo(2)"></button>
+      <button class="slider-dot" onclick="goTo(3)"></button>
+    </div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-logo">
+          <img src="https://recklinghausen-chargers.com/wp-content/uploads/2020/09/chargers_frei-1.png" alt="Chargers Logo">
+        </div>
+        <div>
+          <div class="hero-tag">⚡ American Football · Verbandsliga NRW</div>
+          <h1>RECKLINGHAUSEN<br><span>CHARGERS</span></h1>
+          <p>Dein Football-Verein im Herzen des Ruhrgebiets – American Football &amp; Flag Football für alle Altersklassen.</p>
+          <div class="hero-btns">
+            <a href="https://easyverein.com/public/Chargers/applicationform/" class="btn-p" target="_blank" rel="noopener">Jetzt Mitglied werden</a>
+            <a href="#" class="btn-s" onclick="showPage('teams',document.querySelectorAll('.nav-links a')[2])">Zu den Teams</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">2–2</div><div class="lbl">Bilanz 2026</div></div>
+        <div class="hero-stat"><div class="num">3</div><div class="lbl">Teams</div></div>
+        <div class="hero-stat"><div class="num">.500</div><div class="lbl">Win-Pct. NRW</div></div>
+        <div class="hero-stat"><div class="num">56+</div><div class="lbl">Punkte erzielt</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-bar">
+    <span class="cd-label">⏱ Nächstes Spiel</span>
+    <span class="cd-game">13.06.2026 · Elsen Knights vs. Chargers · 15:00 Uhr · Paderborn</span>
+    <div class="cd-units">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">–</span><span class="cd-lbl">TAGE</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">–</span><span class="cd-lbl">STD</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">–</span><span class="cd-lbl">MIN</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">–</span><span class="cd-lbl">SEK</span></div>
+    </div>
+  </div>
+
+  <!-- ALERT -->
+  <div class="alert-bar">
+    <span class="badge">NÄCHSTES SPIEL</span>
+    <p>13.06.2026 · Elsen Knights vs. Chargers · 15:00 Uhr · Hermann-Löns-Stadion, Paderborn</p>
+    <a href="https://www.football-aktuell.de/cgi-bin/schedule.pl?rubrik=50141714" target="_blank" rel="noopener">Alle Spiele →</a>
+  </div>
+
+  <!-- LIVETICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-header">
+      <button class="ticker-tab active" onclick="switchTicker('live',this)"><span class="ticker-live-dot"></span>Liveticker</button>
+      <button class="ticker-tab" onclick="switchTicker('last',this)">Letztes Spiel</button>
+      <button class="ticker-tab" onclick="switchTicker('admin',this)">✏️ Eintragen</button>
+    </div>
+    <div class="ticker-content show" id="ticker-live">
+      <div class="ticker-empty" id="ticker-empty">Kein Spiel live. Beim nächsten Spieltag wird hier live getickert.</div>
+      <div id="ticker-events"></div>
+    </div>
+    <div class="ticker-content" id="ticker-last">
+      <div style="margin-bottom:10px;font-size:12px;font-weight:600;color:var(--muted);">07.06.2026 · Wesseling Blackvenom – Recklinghausen Chargers</div>
+      <div class="ticker-event">
+        <span class="ticker-time">Ende</span>
+        <div class="ticker-score-big">27 <span class="away">: 13</span></div>
+        <div><span class="ticker-type type-info">ERGEBNIS</span><br><span class="ticker-desc">Niederlage in Wesseling. Weiter Kampf bis zum Schluss!</span></div>
+      </div>
+      <div class="ticker-event">
+        <span class="ticker-time">Q3</span>
+        <div><span class="ticker-type type-td">TOUCHDOWN</span><br><span class="ticker-desc">Chargers verkürzen auf 13:20 – noch nicht aufgegeben!</span></div>
+      </div>
+      <div class="ticker-event">
+        <span class="ticker-time">Q1</span>
+        <div><span class="ticker-type type-td">TOUCHDOWN</span><br><span class="ticker-desc">Chargers eröffnen die Punkterechnung · 7:7</span></div>
+      </div>
+    </div>
+    <div class="ticker-content" id="ticker-admin">
+      <p style="font-size:11px;color:var(--muted);margin-bottom:10px;">Live-Ereignis eintragen (nur für Betreuer am Spieltag):</p>
+    </div>
+    <div class="ticker-admin-form" id="ticker-form" style="display:none;">
+      <input type="text" id="t-min" placeholder="Min / Q" style="width:80px;">
+      <select id="t-type">
+        <option value="type-td">Touchdown</option>
+        <option value="type-fg">Field Goal</option>
+        <option value="type-safety">Safety</option>
+        <option value="type-info">Info</option>
+      </select>
+      <input type="text" id="t-desc" placeholder="Beschreibung..." style="flex:1;min-width:160px;">
+      <button onclick="addTick()">+ Eintragen</button>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+    <div>
+
+      <!-- ERGEBNISSE -->
+      <div class="section">
+        <div class="sec-title"><span class="dot"></span> Saison 2026 – Ergebnisse</div>
+
+        <div class="match">
+          <div class="match-date"><div class="day">02</div><div style="font-size:9px;opacity:.7">Mai</div></div>
+          <div class="match-body"><div class="match-teams">Recklinghausen Chargers – Lippstadt Eagles</div><div class="match-comp">Verbandsliga NRW · Heimspiel · Stadion Hohenhorst</div></div>
+          <div class="match-result"><div class="match-score"><span class="score-w">28</span><span class="score-sep"> : </span><span>10</span></div><span class="badge-win">Sieg ✓</span></div>
+        </div>
+
+        <div class="match">
+          <div class="match-date" style="background:#1a5c9c;"><div class="day">10</div><div style="font-size:9px;opacity:.7">Mai</div></div>
+          <div class="match-body"><div class="match-teams">Rheine Raptors – Recklinghausen Chargers</div><div class="match-comp">Verbandsliga NRW · Auswärtsspiel · Rheine</div></div>
+          <div class="match-result"><div class="match-score"><span>0</span><span class="score-sep"> : </span><span class="score-w">28</span></div><span class="badge-win">Sieg ✓</span></div>
+        </div>
+
+        <div class="match">
+          <div class="match-date" style="background:#555;"><div class="day">23</div><div style="font-size:9px;opacity:.7">Mai</div></div>
+          <div class="match-body"><div class="match-teams">Recklinghausen Chargers – Mülheim Shamrocks</div><div class="match-comp">Verbandsliga NRW · Heimspiel · Stadion Hohenhorst</div></div>
+          <div class="match-result"><div class="match-score"><span>0</span><span class="score-sep"> : </span><span class="score-l">16</span></div><span class="badge-loss">Niederlage</span></div>
+        </div>
+
+        <div class="match">
+          <div class="match-date" style="background:#555;"><div class="day">07</div><div style="font-size:9px;opacity:.7">Jun</div></div>
+          <div class="match-body"><div class="match-teams">Wesseling Blackvenom – Recklinghausen Chargers</div><div class="match-comp">Verbandsliga NRW · Auswärtsspiel · Wesseling</div></div>
+          <div class="match-result"><div class="match-score"><span class="score-l">27</span><span class="score-sep"> : </span><span>13</span></div><span class="badge-loss">Niederlage</span></div>
+        </div>
+      </div>
+
+      <!-- TABELLE -->
+      <div class="section">
+        <div class="sec-title"><span class="dot"></span> Verbandsliga NRW – Tabelle 2026</div>
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th class="rank">#</th><th>Team</th>
+              <th style="text-align:center">Sp.</th><th style="text-align:center">S</th><th style="text-align:center">N</th>
+              <th style="text-align:center">Pkt.</th><th class="pct" style="text-align:right">Diff.</th>
+            </tr>
+          </thead>
+          <tbody id="tabelle-body">
+            <tr><td colspan="7" style="text-align:center;color:var(--muted);padding:14px 0;">Tabelle wird geladen…</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:10px;color:var(--muted);margin-top:7px;" id="tabelle-stand">Quelle: nrwfootball.de</p>
+      </div>
+
+      <!-- KARTE -->
+      <div class="section">
+        <div class="sec-title"><span class="dot"></span> Anfahrt – Stadion Hohenhorst</div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484!2d7.19525!3d51.59552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8e2a3b2000001%3A0x1!2sAm+Stadion+1%2C+45659+Recklinghausen!5e0!3m2!1sde!2sde!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;">📍 Am Stadion 1, 45659 Recklinghausen</p>
+      </div>
+
+    </div><!-- /main col -->
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sb">
+        <div class="member-cta">
+          <h3>WERDE CHARGER!</h3>
+          <p>Tritt jetzt unserem Verein bei – als Spieler, Fan oder Volunteer.</p>
+          <a href="https://easyverein.com/public/Chargers/applicationform/" target="_blank" rel="noopener">Jetzt anmelden →</a>
+          <a href="https://recklinghausen-chargers.com/new-login/" target="_blank" rel="noopener" class="login-btn">Mitglieder-Login →</a>
+        </div>
+      </div>
+
+      <div class="sb">
+        <div class="sec-title" style="font-size:14px;margin-bottom:10px;"><span class="dot"></span> Fan-Shop</div>
+        <div class="shop-cards">
+          <a href="https://recklinghausen-chargers.klubshop.de/" target="_blank" rel="noopener" class="shop-card">
+            <div class="shop-icon" style="background:#e8f0fc;">🏪</div>
+            <div><div class="shop-name">Offizieller Klubshop</div><div class="shop-desc">Trikots, Caps, Hoodies &amp; mehr</div></div>
+            <span class="shop-arrow">→</span>
+          </a>
+          <a href="https://knoah.at/chargers-fan/" target="_blank" rel="noopener" class="shop-card">
+            <div class="shop-icon" style="background:#f9e0e0;">👕</div>
+            <div><div class="shop-name">knoah.at – Fan-Kollektion</div><div class="shop-desc">Exklusive Chargers-Artikel</div></div>
+            <span class="shop-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sb">
+        <div class="sec-title" style="font-size:14px;margin-bottom:10px;"><span class="dot"></span> Instagram</div>
+        <div class="ig-grid">
+          <a href="https://www.instagram.com/recklinghausen_chargers" target="_blank" rel="noopener" class="ig-card">
+            <div class="ig-av" style="background:var(--blue-dark);">RC</div>
+            <div><div class="ig-handle">@recklinghausen_chargers</div><div class="ig-desc">American Football Seniors</div></div>
+            <span class="ig-arr">→</span>
+          </a>
+          <a href="https://www.instagram.com/recklinghausen_chargers_jugend" target="_blank" rel="noopener" class="ig-card">
+            <div class="ig-av" style="background:var(--blue);">RCJ</div>
+            <div><div class="ig-handle">@rc_chargers_jugend</div><div class="ig-desc">Jugend U16 Tackle Football</div></div>
+            <span class="ig-arr">→</span>
+          </a>
+          <a href="https://www.instagram.com/recklinghausen_chargers.flag" target="_blank" rel="noopener" class="ig-card">
+            <div class="ig-av" style="background:var(--red);">FLAG</div>
+            <div><div class="ig-handle">@rc_chargers.flag</div><div class="ig-desc">Flag Football alle Altersklassen</div></div>
+            <span class="ig-arr">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sb">
+        <div class="sec-title" style="font-size:14px;margin-bottom:10px;"><span class="dot"></span> Trainingszeiten</div>
+        <div style="margin-bottom:13px;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:7px;">🏈 Tackle Football</div>
+          <div id="training-tackle"></div>
+        </div>
+        <div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:7px;">🏳️ Flag Football</div>
+          <div id="training-flag"></div>
+        </div>
+      </div>
+
+      <div class="sb">
+        <div class="sec-title" style="font-size:14px;margin-bottom:9px;"><span class="dot"></span> Kontakt</div>
+        <div style="font-size:11px;line-height:2.2;color:var(--text);">
+          <div>📍 Am Stadion 1, 45659 Recklinghausen</div>
+          <div>📧 <a href="mailto:info@recklinghausen-chargers.com" style="color:var(--blue);text-decoration:none;">info@recklinghausen-chargers.com</a></div>
+          <div>🏈 <a href="mailto:flag@recklinghausen-chargers.com" style="color:var(--blue);text-decoration:none;">flag@recklinghausen-chargers.com</a></div>
+          <div>📞 02361 89 08 412</div>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /main-grid -->
+</div><!-- /page-home -->
+
+<!-- ═══ SPIELPLAN PAGE ═══ -->
+<div class="page" id="page-spielplan">
+  <div class="page-inner">
+    <div class="sec-title"><span class="dot"></span> Spielplan 2026 – Kommende Spiele</div>
+
+    <div class="match">
+      <div class="match-date" style="background:var(--red);"><div class="day">13</div><div style="font-size:9px;opacity:.8">Jun</div></div>
+      <div class="match-body"><div class="match-teams">Elsen Knights vs. Recklinghausen Chargers</div><div class="match-comp">15:00 Uhr · Hermann-Löns-Stadion, Paderborn · Auswärtsspiel</div></div>
+      <div class="match-result"><span class="badge-up">Auswärts</span></div>
+    </div>
+    <div class="match">
+      <div class="match-date" style="background:var(--blue);"><div class="day">27</div><div style="font-size:9px;opacity:.8">Jun</div></div>
+      <div class="match-body"><div class="match-teams">Recklinghausen Chargers vs. Euskirchen Lions</div><div class="match-comp">15:00 Uhr · Stadion Hohenhorst · Heimspiel</div></div>
+      <div class="match-result"><span class="badge-up">Heim</span></div>
+    </div>
+    <div class="match">
+      <div class="match-date" style="background:var(--blue);"><div class="day">04</div><div style="font-size:9px;opacity:.8">Jul</div></div>
+      <div class="match-body"><div class="match-teams">Gelsenkirchen Devils vs. Recklinghausen Chargers</div><div class="match-comp">15:00 Uhr · Fischerstraße, Gelsenkirchen · Auswärtsspiel</div></div>
+      <div class="match-result"><span class="badge-up">Auswärts</span></div>
+    </div>
+    <div class="match">
+      <div class="match-date" style="background:var(--blue);"><div class="day">05</div><div style="font-size:9px;opacity:.8">Sep</div></div>
+      <div class="match-body"><div class="match-teams">Recklinghausen Chargers vs. Rheine Raptors</div><div class="match-comp">15:00 Uhr · Stadion Hohenhorst · Heimspiel</div></div>
+      <div class="match-result"><span class="badge-up">Heim</span></div>
+    </div>
+    <div class="match">
+      <div class="match-date" style="background:var(--blue);"><div class="day">26</div><div style="font-size:9px;opacity:.8">Sep</div></div>
+      <div class="match-body"><div class="match-teams">Recklinghausen Chargers vs. Elsen Knights</div><div class="match-comp">15:00 Uhr · Stadion Hohenhorst · Heimspiel</div></div>
+      <div class="match-result"><span class="badge-up">Heim</span></div>
+    </div>
+
+    <a href="https://www.football-aktuell.de/cgi-bin/schedule.pl?rubrik=50141714" target="_blank" rel="noopener" class="link-btn">Vollständiger Spielplan bei football-aktuell.de →</a>
+  </div>
+</div>
+
+<!-- ═══ TEAMS PAGE ═══ -->
+<div class="page" id="page-teams">
+  <div class="page-inner">
+    <div class="sec-title"><span class="dot"></span> Trainer &amp; Coaching Staff</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">🏈 Tackle Football Seniors – Coaching Staff (6)</div>
+
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue-dark);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name">Mike Kowalczek</div><div class="coach-role">Head Coach</div></div>
+      <div style="margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">HC</div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 2 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 3 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 4 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 5 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 6 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin:18px 0 10px;">👦 Jugend U16 Tackle Football – Coaching Staff (5)</div>
+
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue-dark);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name">Philip Laake</div><div class="coach-role">Head Coach · Jugend U16</div></div>
+      <div style="margin-left:auto;background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">HC U16</div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 2 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 3 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 4 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--blue);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 5 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
+    </div>
+
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin:18px 0 10px;">🏳️ Flag Football – Coaching Staff</div>
+
+    <div class="coach-row">
+      <div class="coach-av" style="background:var(--red);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div><div class="coach-name">Tim Münninghoff</div><div class="coach-role">Trainer · Flag Football alle Altersklassen</div></div>
+      <div style="margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">FLAG HC</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;"><span class="dot"></span> Spielerprofile – Seniors</div>
+    <div class="players-grid">
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#1</div><div class="player-name">Name eintragen</div><div class="player-pos">QB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#7</div><div class="player-name">Name eintragen</div><div class="player-pos">WR</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#22</div><div class="player-name">Name eintragen</div><div class="player-pos">RB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#55</div><div class="player-name">Name eintragen</div><div class="player-pos">LB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#78</div><div class="player-name">Name eintragen</div><div class="player-pos">OL</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#99</div><div class="player-name">Name eintragen</div><div class="player-pos">DE</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:10px;">Namen, Fotos und Positionen können direkt im HTML-Code vom Vereinsadmin gepflegt werden.</p>
+  </div>
+</div>
+
+<!-- ═══ HELFER PAGE ═══ -->
+<div class="page" id="page-helfer">
+  <div class="page-inner">
+    <div class="sec-title"><span class="dot"></span> Unsere fleißigen Helfer – Herzlichen Dank! 🙏</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.7;">Kein Spieltag ohne sie: Catering, Auf- und Abbau, Fotografie, Ordnerdienst – unsere Helfer machen den Spielbetrieb erst möglich.</p>
+    <div class="helpers-grid">
+      <div class="helper-card"><div class="helper-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🍔</div><div class="helper-name">Name eintragen</div><div class="helper-role">Catering</div></div>
+      <div class="helper-card"><div class="helper-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">📸</div><div class="helper-name">Name eintragen</div><div class="helper-role">Fotografie</div></div>
+      <div class="helper-card"><div class="helper-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🛠️</div><div class="helper-name">Name eintragen</div><div class="helper-role">Aufbau &amp; Abbau</div></div>
+      <div class="helper-card"><div class="helper-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🎯</div><div class="helper-name">Name eintragen</div><div class="helper-role">Ordnerdienst</div></div>
+      <div class="helper-card"><div class="helper-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">📋</div><div class="helper-name">Name eintragen</div><div class="helper-role">Organisation</div></div>
+      <div class="helper-card"><div class="helper-photo" style="background:var(--bg3);">➕</div><div class="helper-name" style="color:var(--muted);">Du auch?</div><div class="helper-role"><a href="mailto:info@recklinghausen-chargers.com" style="color:var(--blue);text-decoration:none;">Jetzt melden!</a></div></div>
+    </div>
+    <div class="thank-box">
+      <p>⚡ 🏈 ❤️<br>Ohne euch läuft nichts. Ihr seid das Fundament der Recklinghausen Chargers.<br><strong>DANKE!</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FANSHOP PAGE ═══ -->
+<div class="page" id="page-fanshop">
+  <div class="page-inner">
+    <div class="sec-title"><span class="dot"></span> Fan-Shop – Chargers Merchandise</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">Zeig deine Farben! Trikots, Hoodies, Caps und mehr – in zwei Shops erhältlich:</p>
+    <div class="shop-cards" style="max-width:440px;">
+      <a href="https://recklinghausen-chargers.klubshop.de/" target="_blank" rel="noopener" class="shop-card" style="padding:16px 18px;">
+        <div class="shop-icon" style="background:#e8f0fc;width:48px;height:48px;font-size:24px;border-radius:8px;">🏪</div>
+        <div>
+          <div class="shop-name" style="font-size:14px;">Offizieller Klubshop</div>
+          <div class="shop-desc">recklinghausen-chargers.klubshop.de<br>Trikots, Caps, Hoodies &amp; Vereinskleidung</div>
+        </div>
+        <span class="shop-arrow" style="font-size:18px;">→</span>
+      </a>
+      <a href="https://knoah.at/chargers-fan/" target="_blank" rel="noopener" class="shop-card" style="padding:16px 18px;">
+        <div class="shop-icon" style="background:#f9e0e0;width:48px;height:48px;font-size:24px;border-radius:8px;">👕</div>
+        <div>
+          <div class="shop-name" style="font-size:14px;">knoah.at – Chargers Fan</div>
+          <div class="shop-desc">knoah.at/chargers-fan/<br>Exklusive Fan-Kollektion</div>
+        </div>
+        <span class="shop-arrow" style="font-size:18px;">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SPONSORS PAGE ═══ -->
+<div class="page" id="page-sponsors">
+  <div class="page-inner">
+    <div class="sec-title"><span class="dot"></span> Unsere Sponsoren</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">Vielen Dank an alle Sponsoren, die den Vereinssport in Recklinghausen unterstützen!</p>
+    <div class="sponsor-grid">
+      <div class="sponsor-slot filled" style="display:flex;align-items:center;justify-content:center;padding:12px 14px;"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="max-height:40px;max-width:100%;object-fit:contain;"></div>
+      <div class="sponsor-slot">Sponsor 2<br><span style="font-size:9px;">Logo einfügen</span></div>
+      <div class="sponsor-slot">Sponsor 3<br><span style="font-size:9px;">Logo einfügen</span></div>
+      <div class="sponsor-slot">Sponsor 4<br><span style="font-size:9px;">Logo einfügen</span></div>
+    </div>
+    <div style="margin-top:22px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:18px 20px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:7px;color:var(--text);">Sponsor werden</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.7;">Unterstütze American Football in Recklinghausen und werde Teil unserer Chargers-Familie! Für Informationen zu Sponsorenpaketen und Konditionen kontaktiere uns gerne:<br>
+      <a href="mailto:info@recklinghausen-chargers.com" style="color:var(--blue);font-weight:600;">info@recklinghausen-chargers.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<!-- SPONSOREN-BANNER -->
+<div style="background:var(--bg2);border-top:2px solid var(--border);padding:16px 0;overflow:hidden;">
+  <div style="text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;">Unsere Sponsoren</div>
+  <div style="overflow:hidden;">
+    <div id="sponsor-track" style="display:flex;align-items:center;gap:32px;width:max-content;animation:scroll-sponsors 22s linear infinite;">
+      <div class="spl"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="height:30px;object-fit:contain;"></div>
+      <div class="spl">🏢 <strong>Sponsor 2</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 3</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 4</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 5</strong><span>Logo einfügen</span></div>
+      <div class="spl spl-cta">➕ <strong>Ihr Logo hier</strong><span>Jetzt Partner werden</span></div>
+      <div class="spl"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="height:30px;object-fit:contain;"></div>
+      <div class="spl">🏢 <strong>Sponsor 2</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 3</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 4</strong><span>Logo einfügen</span></div>
+      <div class="spl">🏢 <strong>Sponsor 5</strong><span>Logo einfügen</span></div>
+      <div class="spl spl-cta">➕ <strong>Ihr Logo hier</strong><span>Jetzt Partner werden</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Recklinghausen Chargers e.V. · Am Stadion 1, 45659 Recklinghausen</p>
+  <div>
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="https://easyverein.com/public/Chargers/applicationform/" target="_blank" rel="noopener">Mitglied werden</a>
+  </div>
+</footer>
+
+<script>
+// ── SLIDER ──
+let cur = 0;
+const slides = document.querySelectorAll('.slide');
+const dots   = document.querySelectorAll('.slider-dot');
+function goTo(n) {
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+}
+setInterval(() => goTo((cur + 1) % slides.length), 4500);
+
+// ── DARK MODE ──
+function toggleDark() {
+  document.getElementById('site').classList.toggle('dark');
+}
+
+// ── PAGE NAVIGATION ──
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── TICKER TABS ──
+function switchTicker(tab, el) {
+  document.querySelectorAll('.ticker-content').forEach(t => t.classList.remove('show'));
+  document.querySelectorAll('.ticker-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('ticker-' + tab).classList.add('show');
+  el.classList.add('active');
+  // Show admin form only on admin tab
+  document.getElementById('ticker-form').style.display = (tab === 'admin') ? 'flex' : 'none';
+}
+
+// ── LIVETICKER ──
+const tickEvents = [];
+const typeLabels = { 'type-td': 'TOUCHDOWN', 'type-fg': 'FIELD GOAL', 'type-safety': 'SAFETY', 'type-info': 'INFO' };
+
+function addTick() {
+  const min  = document.getElementById('t-min').value.trim();
+  const type = document.getElementById('t-type').value;
+  const desc = document.getElementById('t-desc').value.trim();
+  if (!min || !desc) return;
+  tickEvents.unshift({ min, type, label: typeLabels[type], desc });
+  document.getElementById('t-min').value  = '';
+  document.getElementById('t-desc').value = '';
+  renderTicker();
+}
+
+function renderTicker() {
+  const empty = document.getElementById('ticker-empty');
+  const ev    = document.getElementById('ticker-events');
+  if (tickEvents.length === 0) { empty.style.display = 'block'; ev.innerHTML = ''; return; }
+  empty.style.display = 'none';
+  ev.innerHTML = tickEvents.map(e =>
+    `<div class="ticker-event">
+      <span class="ticker-time">${e.min}'</span>
+      <div><span class="ticker-type ${e.type}">${e.label}</span><br>
+      <span class="ticker-desc">${e.desc}</span></div>
+    </div>`
+  ).join('');
+}
+
+// ── COUNTDOWN ──
+const gameDate = new Date('2026-06-13T15:00:00');
+function updateCd() {
+  const diff = gameDate - new Date();
+  if (diff <= 0) {
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '0');
+    return;
+  }
+  document.getElementById('cd-d').textContent = Math.floor(diff / 86400000);
+  document.getElementById('cd-h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+}
+updateCd();
+setInterval(updateCd, 1000);
+
+// ── DATEN AUS data.json LADEN (Tabelle + Trainingszeiten) ──
+fetch('data.json?_=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    renderTabelle(data.tabelle);
+    renderTrainingszeiten(data.trainingszeiten);
+  })
+  .catch(err => console.error('data.json konnte nicht geladen werden:', err));
+
+function renderTabelle(tabelle) {
+  if (!tabelle || !tabelle.zeilen) return;
+  const body = document.getElementById('tabelle-body');
+  body.innerHTML = tabelle.zeilen.map(z => {
+    const isChargers = z.team.includes('Recklinghausen');
+    const diff = (z.punkte_fuer - z.punkte_gegen);
+    const diffStr = (diff > 0 ? '+' : '') + diff;
+    return `<tr${isChargers ? ' class="hl"' : ''}>
+      <td class="rank"${isChargers ? ' style="font-weight:900;color:var(--blue-dark);"' : ''}>${z.platz}</td>
+      <td class="tn">${isChargers ? '⚡ ' : ''}${z.team}</td>
+      <td style="text-align:center">${z.spiele}</td>
+      <td style="text-align:center">${z.siege}</td>
+      <td style="text-align:center">${z.niederlagen}</td>
+      <td style="text-align:center">${z.punkte}</td>
+      <td class="pct" style="text-align:right">${diffStr}</td>
+    </tr>`;
+  }).join('');
+  const stand = document.getElementById('tabelle-stand');
+  if (stand && tabelle.stand) {
+    stand.textContent = 'Quelle: nrwfootball.de · Stand: ' + new Date(tabelle.stand).toLocaleDateString('de-DE');
+  }
+}
+
+function renderTrainingszeiten(tz) {
+  if (!tz) return;
+  const badge = (gruppe, farbe) => `<span class="tr-badge"${farbe ? ` style="background:${farbe};"` : ''}>${gruppe}</span>`;
+  const item = (e, farbe) => `<div class="tr-item">${badge(e.gruppe, farbe)}<div class="tr-info"><strong>${e.zeiten}</strong>${e.ort ? '<br>' + e.ort : ''}</div></div>`;
+  const tackleEl = document.getElementById('training-tackle');
+  const flagEl = document.getElementById('training-flag');
+  if (tackleEl && tz.tackle) tackleEl.innerHTML = tz.tackle.map(e => item(e, null)).join('');
+  if (flagEl && tz.flag) flagEl.innerHTML = tz.flag.map(e => item(e, 'var(--red)')).join('');
+}
+</script>
+</body>
+</html>
