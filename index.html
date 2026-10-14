@@ -696,10 +696,46 @@ footer a:hover{color:#fff;}
 </div>
 
 <!-- ═══ TEAMS PAGE ═══ -->
+<!-- ═══ TEAMS – ÜBERSICHT ═══ -->
 <div class="page" id="page-teams">
   <div class="page-inner">
-    <div class="sec-title"><span class="dot"></span> Trainer &amp; Coaching Staff</div>
-    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">🏈 Tackle Football Seniors – Coaching Staff (6)</div>
+    <div class="sec-title"><span class="dot"></span> Unsere Teams</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">Trainer, Coaching-Staff und Spielerprofile – nach Mannschaft sortiert.</p>
+    <div class="shop-cards" style="max-width:620px;">
+      <a href="#" class="shop-card" style="padding:16px 18px;" onclick="showTeamPage('tackle-seniors');return false;">
+        <div class="shop-icon" style="background:#e8f0fc;width:48px;height:48px;font-size:24px;border-radius:8px;">🏈</div>
+        <div>
+          <div class="shop-name" style="font-size:14px;">Tackle Football – Seniors</div>
+          <div class="shop-desc">Trainer, Coaching-Staff &amp; Spielerprofile</div>
+        </div>
+        <span class="shop-arrow" style="font-size:18px;">→</span>
+      </a>
+      <a href="#" class="shop-card" style="padding:16px 18px;" onclick="showTeamPage('tackle-jugend');return false;">
+        <div class="shop-icon" style="background:#e8f0fc;width:48px;height:48px;font-size:24px;border-radius:8px;">👦</div>
+        <div>
+          <div class="shop-name" style="font-size:14px;">Tackle Football – Jugend U16</div>
+          <div class="shop-desc">Trainer, Coaching-Staff &amp; Spielerprofile</div>
+        </div>
+        <span class="shop-arrow" style="font-size:18px;">→</span>
+      </a>
+      <a href="#" class="shop-card" style="padding:16px 18px;" onclick="showTeamPage('flag');return false;">
+        <div class="shop-icon" style="background:#f9e0e0;width:48px;height:48px;font-size:24px;border-radius:8px;">🏳️</div>
+        <div>
+          <div class="shop-name" style="font-size:14px;">Flag Football</div>
+          <div class="shop-desc">Trainer, Coaching-Staff &amp; Spielerprofile</div>
+        </div>
+        <span class="shop-arrow" style="font-size:18px;">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TEAM: TACKLE SENIORS ═══ -->
+<div class="page" id="page-team-tackle-seniors">
+  <div class="page-inner">
+    <a href="#" onclick="showPage('teams',document.querySelectorAll('.nav-links a')[2]);return false;" style="font-size:12px;color:var(--blue);text-decoration:none;display:inline-block;margin-bottom:14px;">← Zurück zu Teams</a>
+    <div class="sec-title"><span class="dot"></span> Tackle Football – Seniors</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">🏈 Coaching Staff (6)</div>
 
     <div class="coach-row">
       <div class="coach-av" style="background:var(--blue-dark);">
@@ -739,7 +775,25 @@ footer a:hover{color:#fff;}
       <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 6 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
     </div>
 
-    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin:18px 0 10px;">👦 Jugend U16 Tackle Football – Coaching Staff (5)</div>
+    <div class="sec-title" style="margin-top:22px;"><span class="dot"></span> Spielerprofile – Seniors</div>
+    <div class="players-grid">
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#1</div><div class="player-name">Name eintragen</div><div class="player-pos">QB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#7</div><div class="player-name">Name eintragen</div><div class="player-pos">WR</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#22</div><div class="player-name">Name eintragen</div><div class="player-pos">RB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#55</div><div class="player-name">Name eintragen</div><div class="player-pos">LB</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#78</div><div class="player-name">Name eintragen</div><div class="player-pos">OL</div></div>
+      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#99</div><div class="player-name">Name eintragen</div><div class="player-pos">DE</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:10px;">Namen, Fotos und Positionen können direkt im HTML-Code vom Vereinsadmin gepflegt werden.</p>
+  </div>
+</div>
+
+<!-- ═══ TEAM: TACKLE JUGEND U16 ═══ -->
+<div class="page" id="page-team-tackle-jugend">
+  <div class="page-inner">
+    <a href="#" onclick="showPage('teams',document.querySelectorAll('.nav-links a')[2]);return false;" style="font-size:12px;color:var(--blue);text-decoration:none;display:inline-block;margin-bottom:14px;">← Zurück zu Teams</a>
+    <div class="sec-title"><span class="dot"></span> Tackle Football – Jugend U16</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">👦 Coaching Staff (5)</div>
 
     <div class="coach-row">
       <div class="coach-av" style="background:var(--blue-dark);">
@@ -773,7 +827,22 @@ footer a:hover{color:#fff;}
       <div><div class="coach-name" style="color:var(--muted);font-style:italic;">Coach 5 – Name folgt</div><div class="coach-role">Rolle eintragen</div></div>
     </div>
 
-    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin:18px 0 10px;">🏳️ Flag Football – Coaching Staff</div>
+    <div class="sec-title" style="margin-top:22px;"><span class="dot"></span> Spielerprofile – Jugend U16</div>
+    <div class="players-grid">
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏈</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏈</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏈</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:10px;">Namen, Fotos und Positionen können direkt im HTML-Code vom Vereinsadmin gepflegt werden.</p>
+  </div>
+</div>
+
+<!-- ═══ TEAM: FLAG FOOTBALL ═══ -->
+<div class="page" id="page-team-flag">
+  <div class="page-inner">
+    <a href="#" onclick="showPage('teams',document.querySelectorAll('.nav-links a')[2]);return false;" style="font-size:12px;color:var(--blue);text-decoration:none;display:inline-block;margin-bottom:14px;">← Zurück zu Teams</a>
+    <div class="sec-title"><span class="dot"></span> Flag Football</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">🏳️ Coaching Staff</div>
 
     <div class="coach-row">
       <div class="coach-av" style="background:var(--red);">
@@ -782,15 +851,13 @@ footer a:hover{color:#fff;}
       <div><div class="coach-name">Tim Münninghoff</div><div class="coach-role">Trainer · Flag Football alle Altersklassen</div></div>
       <div style="margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">FLAG HC</div>
     </div>
+    <p style="font-size:11px;color:var(--muted);margin:10px 0 0;">Hinweis: Flag Football läuft aktuell für alle Altersklassen gemeinsam (siehe Trainingszeiten). Sobald Jugend und Seniors getrennte Teams/Trainer haben, lässt sich diese Seite genauso in zwei Unterseiten aufteilen.</p>
 
-    <div class="sec-title" style="margin-top:22px;"><span class="dot"></span> Spielerprofile – Seniors</div>
+    <div class="sec-title" style="margin-top:22px;"><span class="dot"></span> Spielerprofile – Flag Football</div>
     <div class="players-grid">
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#1</div><div class="player-name">Name eintragen</div><div class="player-pos">QB</div></div>
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#7</div><div class="player-name">Name eintragen</div><div class="player-pos">WR</div></div>
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#22</div><div class="player-name">Name eintragen</div><div class="player-pos">RB</div></div>
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#55</div><div class="player-name">Name eintragen</div><div class="player-pos">LB</div></div>
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#0d2260,#1a3a8c);">🏈</div><div class="player-num">#78</div><div class="player-name">Name eintragen</div><div class="player-pos">OL</div></div>
-      <div class="player-card"><div class="player-photo" style="background:linear-gradient(135deg,#6e0000,#8b0000);">🏈</div><div class="player-num">#99</div><div class="player-name">Name eintragen</div><div class="player-pos">DE</div></div>
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏳️</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏳️</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
+      <div class="player-card"><div class="player-photo" style="background:var(--bg3);">🏳️</div><div class="player-num">#–</div><div class="player-name" style="color:var(--muted);font-style:italic;">Name eintragen</div><div class="player-pos">Pos.</div></div>
     </div>
     <p style="font-size:11px;color:var(--muted);margin-top:10px;">Namen, Fotos und Positionen können direkt im HTML-Code vom Vereinsadmin gepflegt werden.</p>
   </div>
@@ -898,6 +965,13 @@ function showPage(id, el) {
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── TEAM-UNTERSEITEN (innerhalb der Teams-Übersicht, Nav bleibt auf "Teams") ──
+function showTeamPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-team-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
