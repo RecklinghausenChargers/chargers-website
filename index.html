@@ -846,12 +846,7 @@ footer a:hover{color:#fff;}
   <div class="page-inner">
     <div class="sec-title"><span class="dot"></span> Unsere Sponsoren</div>
     <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">Vielen Dank an alle Sponsoren, die den Vereinssport in Recklinghausen unterstützen!</p>
-    <div class="sponsor-grid">
-      <div class="sponsor-slot filled" style="display:flex;align-items:center;justify-content:center;padding:12px 14px;"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="max-height:40px;max-width:100%;object-fit:contain;"></div>
-      <div class="sponsor-slot">Sponsor 2<br><span style="font-size:9px;">Logo einfügen</span></div>
-      <div class="sponsor-slot">Sponsor 3<br><span style="font-size:9px;">Logo einfügen</span></div>
-      <div class="sponsor-slot">Sponsor 4<br><span style="font-size:9px;">Logo einfügen</span></div>
-    </div>
+    <div class="sponsor-grid" id="sponsor-grid"></div>
     <div style="margin-top:22px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:18px 20px;">
       <div style="font-size:14px;font-weight:600;margin-bottom:7px;color:var(--text);">Sponsor werden</div>
       <p style="font-size:12px;color:var(--muted);line-height:1.7;">Unterstütze American Football in Recklinghausen und werde Teil unserer Chargers-Familie! Für Informationen zu Sponsorenpaketen und Konditionen kontaktiere uns gerne:<br>
@@ -865,20 +860,7 @@ footer a:hover{color:#fff;}
 <div style="background:var(--bg2);border-top:2px solid var(--border);padding:16px 0;overflow:hidden;">
   <div style="text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;">Unsere Sponsoren</div>
   <div style="overflow:hidden;">
-    <div id="sponsor-track" style="display:flex;align-items:center;gap:32px;width:max-content;animation:scroll-sponsors 22s linear infinite;">
-      <div class="spl"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="height:30px;object-fit:contain;"></div>
-      <div class="spl">🏢 <strong>Sponsor 2</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 3</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 4</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 5</strong><span>Logo einfügen</span></div>
-      <div class="spl spl-cta">➕ <strong>Ihr Logo hier</strong><span>Jetzt Partner werden</span></div>
-      <div class="spl"><img src="loeseke-logo.png" alt="Löseke's Steingarten" style="height:30px;object-fit:contain;"></div>
-      <div class="spl">🏢 <strong>Sponsor 2</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 3</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 4</strong><span>Logo einfügen</span></div>
-      <div class="spl">🏢 <strong>Sponsor 5</strong><span>Logo einfügen</span></div>
-      <div class="spl spl-cta">➕ <strong>Ihr Logo hier</strong><span>Jetzt Partner werden</span></div>
-    </div>
+    <div id="sponsor-track" style="display:flex;align-items:center;gap:32px;width:max-content;animation:scroll-sponsors 22s linear infinite;"></div>
   </div>
 </div>
 
@@ -980,8 +962,39 @@ fetch('data.json?_=' + Date.now())
   .then(data => {
     renderTabelle(data.tabelle);
     renderTrainingszeiten(data.trainingszeiten);
+    renderSponsoren(data.sponsoren);
   })
   .catch(err => console.error('data.json konnte nicht geladen werden:', err));
+
+// ── SPONSOREN (Sponsoren-Seite + Lauf-Banner im Footer) ──
+const MIN_SPONSOR_SLOTS = 4; // Mindestanzahl Kästchen auf der Sponsoren-Seite (Rest = Platzhalter)
+
+function renderSponsoren(sponsoren) {
+  sponsoren = sponsoren || [];
+
+  // -- Sponsoren-Seite (Kästchen-Raster) --
+  const grid = document.getElementById('sponsor-grid');
+  if (grid) {
+    let html = sponsoren.map(s => `
+      <div class="sponsor-slot filled" style="display:flex;align-items:center;justify-content:center;padding:12px 14px;">
+        <img src="${s.logo}" alt="${s.name}" style="max-height:40px;max-width:100%;object-fit:contain;">
+      </div>`).join('');
+    const fehlendeSlots = Math.max(0, MIN_SPONSOR_SLOTS - sponsoren.length);
+    for (let i = 0; i < fehlendeSlots; i++) {
+      html += `<div class="sponsor-slot">Sponsor<br><span style="font-size:9px;">Logo einfügen</span></div>`;
+    }
+    grid.innerHTML = html;
+  }
+
+  // -- Lauf-Banner im Footer (zweifach hintereinander für nahtlose Schleife) --
+  const track = document.getElementById('sponsor-track');
+  if (track) {
+    const logos = sponsoren.map(s => `<div class="spl"><img src="${s.logo}" alt="${s.name}" style="height:30px;object-fit:contain;"></div>`);
+    const cta = `<div class="spl spl-cta">➕ <strong>Ihr Logo hier</strong><span>Jetzt Partner werden</span></div>`;
+    const einmal = [...logos, cta].join('');
+    track.innerHTML = einmal + einmal; // zweimal, damit die CSS-Scroll-Animation nahtlos wirkt
+  }
+}
 
 function renderTabelle(tabelle) {
   if (!tabelle || !tabelle.zeilen) return;
