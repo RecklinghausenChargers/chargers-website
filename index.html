@@ -1016,5 +1016,20 @@ function renderTrainingszeiten(tz) {
   if (flagEl && tz.flag) flagEl.innerHTML = tz.flag.map(e => item(e, 'var(--red)')).join('');
 }
 </script>
+
+<!-- Netlify Identity: nötig, damit der Bestätigungs-Link in der Einladungs-/Passwort-E-Mail
+     nach dem Login automatisch in den Admin-Bereich (/admin/) weiterleitet. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

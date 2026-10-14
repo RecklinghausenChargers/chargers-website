@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Netlify Identity meldet dich hier an; Git Gateway schreibt die Änderungen
+# dann automatisch als Commit in dieses GitHub-Repo.
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "inhalte"
+    label: "Website-Inhalte"
+    files:
+      - file: "data.json"
+        label: "Tabelle, Trainingszeiten & Sponsoren"
+        name: "daten"
+        fields:
+          - label: "Verbandsliga-Tabelle"
+            name: "tabelle"
+            widget: "object"
+            fields:
+              - { label: "Stand (Datum)", name: "stand", widget: "string" }
+              - { label: "Quelle (Link)", name: "quelle", widget: "string" }
+              - label: "Zeilen"
+                name: "zeilen"
+                widget: "list"
+                summary: "{{fields.platz}}. {{fields.team}} – {{fields.punkte}} Punkte"
+                fields:
+                  - { label: "Platz", name: "platz", widget: "number", value_type: "int" }
+                  - { label: "Team", name: "team", widget: "string" }
+                  - { label: "Spiele", name: "spiele", widget: "number", value_type: "int" }
+                  - { label: "Punkte", name: "punkte", widget: "number", value_type: "int" }
+                  - { label: "Siege", name: "siege", widget: "number", value_type: "int" }
+                  - { label: "Unentschieden", name: "unentschieden", widget: "number", value_type: "int" }
+                  - { label: "Niederlagen", name: "niederlagen", widget: "number", value_type: "int" }
+                  - { label: "Punkte für", name: "punkte_fuer", widget: "number", value_type: "int" }
+                  - { label: "Punkte gegen", name: "punkte_gegen", widget: "number", value_type: "int" }
+
+          - label: "Trainingszeiten"
+            name: "trainingszeiten"
+            widget: "object"
+            fields:
+              - label: "Tackle Football"
+                name: "tackle"
+                widget: "list"
+                summary: "{{fields.gruppe}} – {{fields.zeiten}}"
+                fields:
+                  - { label: "Gruppe", name: "gruppe", widget: "string" }
+                  - { label: "Zeiten", name: "zeiten", widget: "string" }
+                  - { label: "Ort", name: "ort", widget: "string", required: false }
+              - label: "Flag Football"
+                name: "flag"
+                widget: "list"
+                summary: "{{fields.gruppe}} – {{fields.zeiten}}"
+                fields:
+                  - { label: "Gruppe", name: "gruppe", widget: "string" }
+                  - { label: "Zeiten", name: "zeiten", widget: "string" }
+                  - { label: "Ort", name: "ort", widget: "string", required: false }
+
+          - label: "Sponsoren"
+            name: "sponsoren"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Ort", name: "ort", widget: "string", required: false }
