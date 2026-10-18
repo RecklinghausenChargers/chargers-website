@@ -1,29 +1,129 @@
 {
   "tabelle": {
-    "stand": "2026-10-11",
+    "stand": "2026-10-18",
     "quelle": "https://www.nrwfootball.de/index.php/de/seniors-m/verbandsligen-seniors-m/vl-tabelle-2026/",
     "zeilen": [
-      { "platz": 1, "team": "Mülheim Shamrocks", "spiele": 9, "punkte": 18, "siege": 9, "unentschieden": 0, "niederlagen": 0, "punkte_fuer": 206, "punkte_gegen": 55 },
-      { "platz": 2, "team": "Euskirchen Lions", "spiele": 9, "punkte": 14, "siege": 7, "unentschieden": 0, "niederlagen": 2, "punkte_fuer": 335, "punkte_gegen": 198 },
-      { "platz": 3, "team": "Recklinghausen Chargers", "spiele": 9, "punkte": 12, "siege": 6, "unentschieden": 0, "niederlagen": 3, "punkte_fuer": 248, "punkte_gegen": 139 },
-      { "platz": 4, "team": "Gelsenkirchen Devils", "spiele": 10, "punkte": 10, "siege": 5, "unentschieden": 0, "niederlagen": 5, "punkte_fuer": 208, "punkte_gegen": 209 },
-      { "platz": 5, "team": "Lippstadt Eagles", "spiele": 9, "punkte": 8, "siege": 4, "unentschieden": 0, "niederlagen": 5, "punkte_fuer": 194, "punkte_gegen": 163 },
-      { "platz": 6, "team": "Elsen Knights", "spiele": 9, "punkte": 6, "siege": 3, "unentschieden": 0, "niederlagen": 6, "punkte_fuer": 194, "punkte_gegen": 228 },
-      { "platz": 7, "team": "Wesseling Blackvenom", "spiele": 9, "punkte": 6, "siege": 3, "unentschieden": 0, "niederlagen": 6, "punkte_fuer": 170, "punkte_gegen": 203 },
-      { "platz": 8, "team": "Rheine Raptors", "spiele": 10, "punkte": 0, "siege": 0, "unentschieden": 0, "niederlagen": 10, "punkte_fuer": 0, "punkte_gegen": 360 }
+      {
+        "platz": 1,
+        "team": "Mülheim Shamrocks",
+        "spiele": 9,
+        "punkte": 18,
+        "siege": 9,
+        "unentschieden": 0,
+        "niederlagen": 0,
+        "punkte_fuer": 206,
+        "punkte_gegen": 55
+      },
+      {
+        "platz": 2,
+        "team": "Euskirchen Lions",
+        "spiele": 9,
+        "punkte": 14,
+        "siege": 7,
+        "unentschieden": 0,
+        "niederlagen": 2,
+        "punkte_fuer": 335,
+        "punkte_gegen": 198
+      },
+      {
+        "platz": 3,
+        "team": "Recklinghausen Chargers",
+        "spiele": 9,
+        "punkte": 12,
+        "siege": 6,
+        "unentschieden": 0,
+        "niederlagen": 3,
+        "punkte_fuer": 248,
+        "punkte_gegen": 139
+      },
+      {
+        "platz": 4,
+        "team": "Gelsenkirchen Devils",
+        "spiele": 10,
+        "punkte": 10,
+        "siege": 5,
+        "unentschieden": 0,
+        "niederlagen": 5,
+        "punkte_fuer": 208,
+        "punkte_gegen": 209
+      },
+      {
+        "platz": 5,
+        "team": "Lippstadt Eagles",
+        "spiele": 9,
+        "punkte": 8,
+        "siege": 4,
+        "unentschieden": 0,
+        "niederlagen": 5,
+        "punkte_fuer": 194,
+        "punkte_gegen": 163
+      },
+      {
+        "platz": 6,
+        "team": "Elsen Knights",
+        "spiele": 9,
+        "punkte": 6,
+        "siege": 3,
+        "unentschieden": 0,
+        "niederlagen": 6,
+        "punkte_fuer": 194,
+        "punkte_gegen": 228
+      },
+      {
+        "platz": 7,
+        "team": "Wesseling Blackvenom",
+        "spiele": 9,
+        "punkte": 6,
+        "siege": 3,
+        "unentschieden": 0,
+        "niederlagen": 6,
+        "punkte_fuer": 170,
+        "punkte_gegen": 203
+      },
+      {
+        "platz": 8,
+        "team": "Rheine Raptors",
+        "spiele": 10,
+        "punkte": 0,
+        "siege": 0,
+        "unentschieden": 0,
+        "niederlagen": 10,
+        "punkte_fuer": 0,
+        "punkte_gegen": 360
+      }
     ]
   },
   "trainingszeiten": {
     "tackle": [
-      { "gruppe": "Seniors", "zeiten": "Mo + Mi, 19–21 Uhr", "ort": "Stadion Hohenhorst" },
-      { "gruppe": "U16", "zeiten": "Mo + Mi, 17:30–19:30 Uhr", "ort": "Stadion Hohenhorst" }
+      {
+        "gruppe": "Seniors",
+        "zeiten": "Mo + Mi, 19–21 Uhr",
+        "ort": "Stadion Hohenhorst"
+      },
+      {
+        "gruppe": "U16",
+        "zeiten": "Mo + Mi, 17:30–19:30 Uhr",
+        "ort": "Stadion Hohenhorst"
+      }
     ],
     "flag": [
-      { "gruppe": "Seniors", "zeiten": "Di + Do, 19–21 Uhr", "ort": "Stadion Hohenhorst" },
-      { "gruppe": "U13/16", "zeiten": "1.+3. Di/Do, 18:15–19:45 Uhr", "ort": "Stadion Hohenhorst" }
+      {
+        "gruppe": "Seniors",
+        "zeiten": "Di + Do, 19–21 Uhr",
+        "ort": "Stadion Hohenhorst"
+      },
+      {
+        "gruppe": "U13/16",
+        "zeiten": "1.+3. Di/Do, 18:15–19:45 Uhr",
+        "ort": "Stadion Hohenhorst"
+      }
     ]
   },
   "sponsoren": [
-    { "name": "Löseke's Steingarten", "logo": "loeseke-logo.png", "ort": "Recklinghausen" }
+    {
+      "name": "Löseke's Steingarten",
+      "logo": "loeseke-logo.png",
+      "ort": "Recklinghausen"
+    }
   ]
 }
