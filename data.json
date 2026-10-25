@@ -1,6 +1,6 @@
 {
   "tabelle": {
-    "stand": "2026-10-19",
+    "stand": "2026-10-25",
     "quelle": "https://www.nrwfootball.de/index.php/de/seniors-m/verbandsligen-seniors-m/vl-tabelle-2026/",
     "zeilen": [
       {
@@ -60,17 +60,6 @@
       },
       {
         "platz": 6,
-        "team": "Elsen Knights",
-        "spiele": 9,
-        "punkte": 6,
-        "siege": 3,
-        "unentschieden": 0,
-        "niederlagen": 6,
-        "punkte_fuer": 194,
-        "punkte_gegen": 228
-      },
-      {
-        "platz": 7,
         "team": "Wesseling Blackvenom",
         "spiele": 9,
         "punkte": 6,
@@ -79,6 +68,17 @@
         "niederlagen": 6,
         "punkte_fuer": 170,
         "punkte_gegen": 203
+      },
+      {
+        "platz": 7,
+        "team": "Elsen Knights",
+        "spiele": 9,
+        "punkte": 6,
+        "siege": 3,
+        "unentschieden": 0,
+        "niederlagen": 6,
+        "punkte_fuer": 194,
+        "punkte_gegen": 228
       },
       {
         "platz": 8,
